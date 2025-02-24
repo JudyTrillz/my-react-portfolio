@@ -1,0 +1,38 @@
+:root {
+  --c-bg: #001429; // dark navy
+  --c-text: #f2f2f2; // off-white
+  --c-primary: #e58e8a; // color primary
+  --c-secondary: #812828; // color secondary
+  --c-accent: #f69323; // color accent
+
+  // Typography
+  /* Base Font Size */
+  --fs-base: 16px; /* Default body text size */
+
+  /* Heading Sizes */
+  --fs-h1: clamp(2rem, 5vw, 4rem); /* 32px → 64px */
+  --lh-h1: clamp(2.5rem, 6vw, 4.5rem); /* 40px → 72px */
+
+  --fs-h2: clamp(1.75rem, 4vw, 3rem); /* 28px → 48px */
+  --lh-h2: clamp(2.25rem, 5vw, 3.75rem); /* 36px → 60px */
+
+  --fs-h3: clamp(1.5rem, 3.5vw, 2.5rem); /* 24px → 40px */
+  --lh-h3: clamp(2rem, 4.5vw, 3rem); /* 32px → 48px */
+
+  /* Paragraph Size */
+  --fs-p: clamp(1rem, 2vw, 1.125rem); /* 16px → 18px */
+  --lh-p: clamp(1.5rem, 2.5vw, 1.75rem); /* 24px → 28px */
+
+  @media only screen and (prefers-color-scheme: light) {
+    --c-bg: #f2f2f2; // off-white
+    --c-text: #001429; // dark navy
+    --c-primary: #e58e8a; // color primary
+    --c-secondary: #812828; // color secondary
+    --c-accent: #f69323; // color accent
+  }
+}
+
+.container {
+  width: min(100% - 30px, 75rem);
+  margin-inline: auto;
+}
