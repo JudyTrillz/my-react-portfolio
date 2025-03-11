@@ -1,38 +1,66 @@
 :root {
-  --c-bg: #001429; // dark navy
-  --c-text: #f2f2f2; // off-white
+  --c-bg: #080a16; // dark navy
+  --c-text: #f5f5f5; // off-white
   --c-primary: #e58e8a; // color primary
-  --c-secondary: #812828; // color secondary
-  --c-accent: #f69323; // color accent
+  --c-secondary: #f5c77f; // color secondary
+  --c-secondary-alt: hsl(29, 93%, 51%); // color secondary
+  --c-accent: #00c6ff; // color accent
 
-  // Typography
   /* Base Font Size */
   --fs-base: 16px; /* Default body text size */
 
   /* Heading Sizes */
-  --fs-h1: clamp(2rem, 5vw, 4rem); /* 32px → 64px */
-  --lh-h1: clamp(2.5rem, 6vw, 4.5rem); /* 40px → 72px */
+  --fs-h1: clamp(2.5rem, 5vw, 4.5rem); /* 40px → 72px */
+  --lh-h1: clamp(3rem, 6vw, 5rem); /* 48px → 80px */
 
-  --fs-h2: clamp(1.75rem, 4vw, 3rem); /* 28px → 48px */
-  --lh-h2: clamp(2.25rem, 5vw, 3.75rem); /* 36px → 60px */
+  --fs-h2: clamp(2rem, 4.5vw, 3.5rem); /* 32px → 56px */
+  --lh-h2: clamp(2.5rem, 5vw, 4.25rem); /* 40px → 68px */
 
-  --fs-h3: clamp(1.5rem, 3.5vw, 2.5rem); /* 24px → 40px */
-  --lh-h3: clamp(2rem, 4.5vw, 3rem); /* 32px → 48px */
+  --fs-h3: clamp(1.75rem, 3.5vw, 2.75rem); /* 28px → 44px */
+  --lh-h3: clamp(2.25rem, 4.5vw, 3.25rem); /* 36px → 52px */
 
   /* Paragraph Size */
-  --fs-p: clamp(1rem, 2vw, 1.125rem); /* 16px → 18px */
-  --lh-p: clamp(1.5rem, 2.5vw, 1.75rem); /* 24px → 28px */
+  --fs-p: clamp(1rem, 2vw, 1.25rem); /* 16px → 20px */
+  --lh-p: clamp(1.5rem, 2.5vw, 1.875rem); /* 24px → 30px */
+
+  --section-padding: 9.375rem;
 
   @media only screen and (prefers-color-scheme: light) {
-    --c-bg: #f2f2f2; // off-white
-    --c-text: #001429; // dark navy
+    --c-bg: #f5f5f5; // off-white
+    --c-text: #080a16; // dark navy
     --c-primary: #e58e8a; // color primary
-    --c-secondary: #812828; // color secondary
-    --c-accent: #f69323; // color accent
+    --c-secondary: #f5c77f; // color secondary
+    --c-secondary-alt: #f67e0e; // color secondary
+    --c-accent: #00c6ff; // color accent
   }
 }
 
 .container {
   width: min(100% - 30px, 75rem);
+  max-width: 100%;
   margin-inline: auto;
+  padding-inline: 1rem; /* Ensures spacing on smaller screens */
+}
+
+.section {
+  padding-top: var(--section-padding);
+}
+
+/* Extra Large Screens (Above 1920px) */
+@media (min-width: 1920px) {
+  .container {
+    width: min(100% - 60px, 90rem); /* More width on larger screens */
+  }
+}
+
+/* Small Screens (Below 480px) */
+@media (max-width: 480px) {
+  .container {
+    width: 100%;
+    padding-inline: 15px; /* More padding for tiny screens */
+  }
+}
+
+.slide-left {
+  right: 0;
 }

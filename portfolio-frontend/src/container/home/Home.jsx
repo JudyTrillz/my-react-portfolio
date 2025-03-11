@@ -1,11 +1,20 @@
-import { Header, Portfolio, Skill, About, Contact, Footer } from "../../components";
+import {
+  Header,
+  MainHome,
+  Portfolio,
+  Skill,
+  About,
+  Contact,
+  Footer,
+} from "../../components";
 import "./Home.scss";
 
 const Home = () => {
   return (
     <div>
       <Header />
-      <main>
+      <main className="container">
+        <MainHome />
         <Portfolio />
         <Skill />
         <About />

@@ -1,0 +1,11 @@
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  background-color: var(--c-bg);
+
+  &.active {
+    box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.15);
+  }
+}
