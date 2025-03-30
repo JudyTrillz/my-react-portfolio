@@ -87,6 +87,13 @@
   }
 }
 
+.section-intro {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: var(--fs-p);
+  line-height: var(--lh-p);
+}
+
 /* Extra Large Screens (Above 1920px) */
 @media (min-width: 1920px) {
   .container {
