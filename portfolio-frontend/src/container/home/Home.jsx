@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+
 import {
   Header,
   MainHome,
@@ -7,15 +9,32 @@ import {
   Contact,
   Footer,
 } from "../../components";
+import { getPortfolio } from "../../util/FetchPort";
 import "./Home.scss";
+import client from "../../Client";
 
 const Home = () => {
+  const [projects, setProjects] = useState([]);
+
+  const query = getPortfolio();
+
+  useEffect(() => {
+    client
+      .fetch(query)
+      .then((data) => {
+        setProjects(data);
+      })
+      .catch((err) => {
+        console.log("Something went wrong", err);
+      });
+  }, [query]);
+
   return (
     <div>
       <Header />
-      <main className="container">
+      <main>
         <MainHome />
-        <Portfolio />
+        <Portfolio projects={projects && projects} />
         <Skill />
         <About />
         <Contact />

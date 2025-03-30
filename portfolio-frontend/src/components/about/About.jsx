@@ -4,7 +4,7 @@ import { Element } from "react-scroll";
 const About = () => {
   return (
     <Element name="About">
-      <section className="section">About</section>
+      <section className="section container">About</section>
     </Element>
   );
 };

@@ -1,0 +1,151 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.582);
+  z-index: 200;
+
+  &__container {
+    background-color: black;
+    width: 70%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    max-height: 90vh;
+    position: relative;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__content {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+
+    @media screen and (max-width: 1000px) {
+      flex-direction: column;
+    }
+
+    &--close {
+      font-size: 2rem;
+      cursor: pointer;
+      position: absolute;
+      top: 10px;
+      right: 30px;
+      color: var(--c-accent);
+      transition: opacity var(--transition);
+      opacity: 0.5;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      @media screen and (max-width: 1000px) {
+        top: 0;
+        right: 25px;
+      }
+    }
+  }
+
+  &__content--img {
+    flex: 1;
+    height: auto;
+    align-self: center;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+  }
+
+  &__content--description {
+    color: #fff;
+    flex: 1;
+
+    &__title {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    &__text {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    &__btns {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+
+      @media screen and (max-width: 470px) {
+        justify-content: center;
+      }
+
+      &--link {
+        border: 1px solid var(--c-accent);
+        color: var(--c-text);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        border-radius: 10px;
+        font-size: var(--fs-p);
+        line-height: var(--lh-p);
+        box-shadow: 0 4px 10px rgba(0, 198, 255, 0.4);
+        transition: var(--transition);
+
+        @media only screen and (prefers-color-scheme: light) {
+          color: #fff;
+        }
+
+        @media screen and (max-width: 470px) {
+          span {
+            display: none;
+          }
+        }
+
+        &:hover {
+          border: 1px solid transparent;
+          box-shadow: none;
+          transform: translateY(-2px);
+          color: var(--c-accent);
+        }
+      }
+    }
+  }
+
+  &__error {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & p {
+      font-size: var(--fs-p);
+      line-height: var(--lh-p);
+    }
+
+    & button {
+      border: none;
+      outline: none;
+      padding: 8px 16px;
+      background-color: rgb(255, 63, 63);
+      color: white;
+      font-size: var(--fs-p);
+      line-height: var(--lh-p);
+      cursor: pointer;
+      border-radius: 10px;
+      transition: background-color var(--transition);
+
+      &:hover {
+        background-color: rgb(252, 16, 16);
+      }
+    }
+  }
+}

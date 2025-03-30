@@ -23,5 +23,17 @@ export const portfolio = defineType({
       title: 'Image',
       type: 'image',
     }),
+
+    defineField({
+      name: 'live',
+      title: 'Live',
+      type: 'url',
+    }),
+
+    defineField({
+      name: 'github',
+      title: 'Github',
+      type: 'url',
+    }),
   ],
 })

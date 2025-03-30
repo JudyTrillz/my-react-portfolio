@@ -24,7 +24,8 @@
   --lh-p: clamp(1.5rem, 2.5vw, 1.875rem); /* 24px → 30px */
 
   --ff-1: "Roboto", serif;
-  --ff-2: "Cinzel Decorative", serif;
+  --ff-2: "Cormorant Upright", serif;
+  --ff-3: "Cinzel Decorative", serif;
 
   --section-padding: 9.375rem;
   --transition: 0.39s ease-in-out;
@@ -48,6 +49,42 @@
 
 .section {
   padding-top: var(--section-padding);
+}
+
+.section-title {
+  text-align: center;
+  font-size: var(--fs-h3);
+  color: var(--c-accent);
+  font-weight: 700;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  line-height: var(--lh-h3);
+  margin-bottom: 40px;
+  font-family: var(--ff-3);
+
+  &::before {
+    content: "";
+    width: 250px;
+    height: 3px;
+    background-color: var(--c-accent);
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: var(--c-accent);
+    bottom: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+  }
 }
 
 /* Extra Large Screens (Above 1920px) */

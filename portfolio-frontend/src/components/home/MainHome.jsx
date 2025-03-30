@@ -43,7 +43,7 @@ const MainHome = () => {
 
   return (
     <Element name="Home">
-      <section className="section home">
+      <section className="section home container">
         <div className="home__container">
           <div className="home__container--data">
             <div className="home__container--data__holder">
@@ -52,13 +52,13 @@ const MainHome = () => {
 
             <h1 className="home__container--data__title">
               <em className="home__container--data__title--span">A Developer</em> <br />{" "}
-              With a Difference.
+              With a <em className="home__container--data__title--span">Difference.</em>
             </h1>
 
             <p className="home__container--data__desc ">
-              Building visually consistent and high-performance websites. Delivering
-              smooth, Scalable, and accessible digital products with Impact, enhancing
-              user engagement with smooth and intuitive user interfaces.
+              Building visually consistent and <br /> high-performance websites,
+              Delivering smooth, Scalable, and accessible digital products with Impact and
+              enhancing user engagement with smooth and intuitive user interfaces.
             </p>
 
             <div className="home__container--data__socials home__container--data__holder">

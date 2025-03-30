@@ -5,3 +5,6 @@ export { default as Contact } from "./contact/Contact.jsx";
 export { default as Portfolio } from "./portfolio/Portfolio.jsx";
 export { default as Skill } from "./skill/Skill.jsx";
 export { default as MainHome } from "./home/MainHome.jsx";
+
+export { default as Modal } from "./modal/Modal.jsx";
+export { default as Loader } from "./loader/Loader.jsx";

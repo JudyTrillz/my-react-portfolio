@@ -3,8 +3,8 @@ import "./Skill.scss";
 
 const Skill = () => {
   return (
-    <Element name="Skill">
-      <section className="section">Skill</section>
+    <Element name="Skills">
+      <section className="section container">Skill</section>
     </Element>
   );
 };

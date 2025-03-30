@@ -1,8 +1,11 @@
-# React + Vite
+# List of things to do to display my projects:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1. [x] Create the client jsx to link frontend to cms.
+2. [x] update schema to have the links to github and live demo.
+3. [x] Fetch my portfolio from the backend.
+4. [x] Display projects using swiper js.
+5. [x] Create a modal to display project details on click.
+6. [x] Style modal correctly.
+7. [ ] Generate a reusable loading component
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
