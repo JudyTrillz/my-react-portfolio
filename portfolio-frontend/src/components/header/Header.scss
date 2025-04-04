@@ -6,6 +6,12 @@
   background-color: var(--c-bg);
 
   &.active {
-    box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.445);
+  }
+
+  @media screen and (prefers-color-scheme: light) {
+    &.active {
+      box-shadow: 0 7px 10px rgba(0, 0, 0, 0.158);
+    }
   }
 }

@@ -1,6 +1,6 @@
 import "./MainHome.scss";
 import { Element, Link } from "react-scroll";
-import homeImg from "../../img/banners/home-banner-alt.svg";
+import homeImg from "../../assets/img/banners/home-banner-alt.svg";
 
 import { BiRightArrowAlt } from "react-icons/bi";
 import { RiTwitterXLine } from "react-icons/ri";
@@ -56,7 +56,6 @@ const MainHome = () => {
             </h1>
 
             <p className="home__container--data__desc ">
-              Building visually consistent and <br /> high-performance websites,
               Delivering smooth, Scalable, and accessible digital products with Impact and
               enhancing user engagement with smooth and intuitive user interfaces.
             </p>

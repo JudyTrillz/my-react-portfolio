@@ -1,14 +1,6 @@
 import { useState, useEffect } from "react";
 
-import {
-  Header,
-  MainHome,
-  Portfolio,
-  Skill,
-  About,
-  Contact,
-  Footer,
-} from "../../components";
+import { Header, MainHome, Portfolio, About, Contact, Footer } from "../../components";
 import { getPortfolio } from "../../util/FetchPort";
 import "./Home.scss";
 import client from "../../Client";
@@ -35,7 +27,6 @@ const Home = () => {
       <main>
         <MainHome />
         <Portfolio projects={projects && projects} />
-        <Skill />
         <About />
         <Contact />
       </main>

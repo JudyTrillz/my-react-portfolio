@@ -31,7 +31,7 @@ const Portfolio = ({ projects }) => {
   return (
     <Element name="Portfolio">
       <section className="section portfolio wrapper ">
-        <h3 className="section-title">Portfolio</h3>
+        <h3 className="section-title">My Projects</h3>
 
         <div className="portfolio__carousel">
           {projects && projects.length > 0 ? (
@@ -42,7 +42,7 @@ const Portfolio = ({ projects }) => {
               coverflowEffect={{
                 rotate: 0,
                 stretch: 0,
-                depth: 120,
+                depth: 180,
                 modifier: 2.5,
               }}
               modules={[EffectCoverflow, Navigation, Pagination, Autoplay, Mousewheel]}
@@ -57,6 +57,7 @@ const Portfolio = ({ projects }) => {
                       src={urlFor(project.image).url()}
                       alt="project-banner"
                       loading="lazy"
+                      title={`${project.title} Application`}
                       onClick={() => {
                         setProjectIdentifier(project._id);
                         setOpenModal(true);

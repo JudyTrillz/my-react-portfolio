@@ -13,16 +13,22 @@
   padding-bottom: 50px;
 }
 .swiper-slide {
-  width: 300px !important;
+  border-radius: 15px;
+  width: 500px !important;
   height: 400px !important;
   background-color: rgba(255, 0, 0, 0);
   cursor: pointer;
+
+  @media screen and (max-width: 37.5rem) {
+    width: 300px !important;
+    height: 400px !important;
+  }
 }
 
 .swiper-slide img {
   width: 100% !important;
   height: 100% !important;
-  border-radius: 10px;
+  // border-radius: 10px;
 }
 
 .swiper-pagination {

@@ -7,7 +7,7 @@ const NavBar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   // const [activeNav, setActiveNav] = useState(false);
 
-  const links = ["Home", "Portfolio", "Skills", "About", "Contact"];
+  const links = ["Home", "Portfolio", "About", "Contact"];
 
   const Menu = () => (
     <ul className="nav__items">
