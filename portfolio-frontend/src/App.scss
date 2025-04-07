@@ -23,11 +23,12 @@
   --fs-p: clamp(1rem, 2vw, 1.25rem); /* 16px → 20px */
   --lh-p: clamp(1.5rem, 2.5vw, 1.875rem); /* 24px → 30px */
 
-  --ff-1: "Roboto", serif;
+  --ff-1: "Nunito", sans-serif;
+
   --ff-2: "Cormorant Upright", serif;
   --ff-3: "Cinzel Decorative", serif;
 
-  --section-padding: 9.375rem;
+  --section-padding: 100px;
   --transition: 0.39s ease-in-out;
 
   @media only screen and (prefers-color-scheme: light) {
@@ -57,11 +58,11 @@
   color: var(--c-accent);
   font-weight: 700;
   position: relative;
-  text-transform: uppercase;
+  text-transform: capitalize;
   letter-spacing: 5px;
   line-height: var(--lh-h3);
   margin-bottom: 40px;
-  font-family: var(--ff-3);
+  font-family: var(--ff-2);
 
   &::before {
     content: "";
