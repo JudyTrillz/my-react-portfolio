@@ -1,0 +1,14 @@
+.footer {
+  background-color: #005c75;
+  margin-top: var(--section-padding);
+  padding: 20px 0;
+
+  text-align: center;
+
+  &__text {
+    font-size: var(--fs-p);
+    color: white;
+    letter-spacing: 3px;
+    font-weight: 700;
+  }
+}

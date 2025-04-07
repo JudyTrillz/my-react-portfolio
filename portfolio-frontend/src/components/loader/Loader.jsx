@@ -19,7 +19,7 @@ const Loader = ({ message }) => {
         aria-label="Loading Spinner"
         data-testid="loader"
       />
-      {message}
+      <p className="loader__message">{message}</p>
     </div>
   );
 };

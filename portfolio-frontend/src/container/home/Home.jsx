@@ -1,6 +1,14 @@
 import { useState, useEffect } from "react";
 
-import { Header, MainHome, Portfolio, About, Contact, Footer } from "../../components";
+import {
+  Header,
+  MainHome,
+  Portfolio,
+  About,
+  Contact,
+  Footer,
+  ScrollUp,
+} from "../../components";
 import { getPortfolio } from "../../util/FetchPort";
 import "./Home.scss";
 import client from "../../Client";
@@ -31,6 +39,7 @@ const Home = () => {
         <Contact />
       </main>
       <Footer />
+      <ScrollUp />
     </div>
   );
 };

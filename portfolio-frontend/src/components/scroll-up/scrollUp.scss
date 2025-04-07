@@ -1,0 +1,30 @@
+.scroll-up {
+  background-color: var(--c-accent);
+  position: fixed;
+  padding: 8px 10px;
+  bottom: 3rem;
+  right: 1rem;
+  z-index: 100;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 198, 255, 0.4);
+  transition: var(--transition);
+
+  & svg {
+    color: white;
+    font-size: var(--fs-p);
+  }
+
+  @media screen and (prefers-color-scheme: light) {
+    box-shadow: 0 4px 10px rgba(1, 107, 136, 0.836);
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: none;
+  }
+}

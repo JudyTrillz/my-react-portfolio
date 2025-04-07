@@ -1,7 +1,7 @@
 import "./Contact.scss";
 import { Element } from "react-scroll";
 import { RiSendPlaneFill } from "react-icons/ri";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
 import { IoLogoWhatsapp } from "react-icons/io5";
@@ -21,6 +21,11 @@ const Contact = () => {
   const [message, setMessage] = useState("");
   const [sent, setSent] = useState(false);
   const [error, setError] = useState(false);
+
+  const nameRef = useRef(null);
+  const emailRef = useRef(null);
+  const subjectRef = useRef(null);
+  const messageRef = useRef(null);
 
   const validateEmail = () => {
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -61,6 +66,30 @@ const Contact = () => {
       message: document.getElementById("message").value,
     };
     e.preventDefault();
+
+    if (!nameRef.current.value) {
+      nameRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
+      nameRef.current.focus();
+      return;
+    }
+
+    if (!emailRef.current.value) {
+      emailRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
+      emailRef.current.focus();
+      return;
+    }
+
+    if (!subjectRef.current.value) {
+      subjectRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
+      subjectRef.current.focus();
+      return;
+    }
+
+    if (!messageRef.current.value) {
+      messageRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
+      messageRef.current.focus();
+      return;
+    }
 
     if (invalidEmail) {
       return;
@@ -147,11 +176,12 @@ const Contact = () => {
           </div>
 
           <div className="contact__content--form">
-            <form action="" method="POST" onSubmit={sendEmail}>
+            <form action="" method="POST">
               <div className="contact__content--form__input">
                 <div>
                   <label htmlFor="name">Full Name:</label>
                   <input
+                    ref={nameRef}
                     type="text"
                     name="name"
                     id="name"
@@ -166,6 +196,7 @@ const Contact = () => {
                 <div>
                   <label htmlFor="email">Email:</label>
                   <input
+                    ref={emailRef}
                     type="email"
                     name="email"
                     id="email"
@@ -187,6 +218,7 @@ const Contact = () => {
                 <div>
                   <label htmlFor="subject">Subject:</label>
                   <input
+                    ref={subjectRef}
                     type="text"
                     name="subject"
                     id="subject"
@@ -202,6 +234,7 @@ const Contact = () => {
               <div>
                 <label htmlFor="message">Your Message:</label>
                 <textarea
+                  ref={messageRef}
                   name="message"
                   rows="5"
                   required
@@ -213,7 +246,7 @@ const Contact = () => {
                   onChange={(e) => setMessage(e.target.value)}></textarea>
               </div>
 
-              <button type="submit">
+              <button type="submit" onClick={sendEmail}>
                 Send Message
                 <RiSendPlaneFill />
               </button>
