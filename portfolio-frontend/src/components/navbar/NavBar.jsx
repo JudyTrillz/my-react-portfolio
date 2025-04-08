@@ -1,18 +1,51 @@
 import { /*useEffect*/ useEffect, useState } from "react";
 import { RiCloseLine, RiMenu5Fill } from "react-icons/ri";
 import { Link } from "react-scroll";
+import { motion } from "framer-motion";
 
 import "./NavBar.scss";
 const NavBar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
-  // const [activeNav, setActiveNav] = useState(false);
 
   const links = ["Home", "Portfolio", "About", "Contact"];
 
+  const isMobile = window.innerWidth <= 992;
+
+  const listVariants = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: isMobile ? 0.2 : 0.5,
+        delayChildren: isMobile ? 0.2 : 0.5,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: -500 },
+    show: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 1 },
+    },
+  };
   const Menu = () => (
-    <ul className="nav__items">
-      {links.map((item, index) => (
-        <li className="nav__item" key={index}>
+    <motion.ul
+      className="nav__items"
+      variants={listVariants}
+      initial="hidden"
+      animate="show">
+      {links.map((item) => (
+        <motion.li
+          className="nav__item"
+          variants={itemVariants}
+          key={item}
+          initial={{ opacity: 0, x: -100 }}
+          animate={{
+            opacity: 1,
+            x: 0,
+            transition: { delay: 0.5, staggerChildren: 0.2 },
+          }}>
           <Link
             to={item}
             smooth={true}
@@ -21,9 +54,9 @@ const NavBar = () => {
             onClick={() => setToggleMenu(false)}>
             {item}
           </Link>
-        </li>
+        </motion.li>
       ))}
-    </ul>
+    </motion.ul>
   );
 
   const openMenu = () => {

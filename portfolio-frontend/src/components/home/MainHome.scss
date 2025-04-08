@@ -1,6 +1,31 @@
 .home {
   position: relative;
 
+  &__gradient {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: green;
+    filter: blur(70px);
+    opacity: 0.3;
+    position: absolute;
+    top: 1.5rem;
+    left: -8.5rem;
+
+    background: linear-gradient(
+      135deg,
+      #00c6ff 0%,
+      #e58e8a 25%,
+      #007ca8 50%,
+      #004a5f 75%,
+      #002737 100%
+    );
+
+    @media screen and (prefers-color-scheme: light) {
+      background: none;
+    }
+  }
+
   &__container {
     display: flex;
     gap: 3rem;
@@ -31,11 +56,34 @@
         line-height: var(--lh-h1);
         white-space: nowrap;
         margin-block-end: 1.5rem;
+        text-shadow: 0px 9px 10px rgba(0, 0, 0, 0.459);
+
+        @media screen and (prefers-color-scheme) {
+          text-shadow: 0px 5px 8px rgba(0, 0, 0, 0.459);
+        }
 
         &--span {
           color: var(--c-accent);
           font-style: normal;
           font-family: var(--ff-2);
+          background: linear-gradient(
+            135deg,
+            #00c6ff,
+            #e58e8a,
+            #007ca8,
+            #004a5f,
+            #002737
+          );
+          background-size: 200% auto;
+          background-clip: text;
+          -webkit-background-clip: text;
+          color: transparent;
+          -webkit-text-fill-color: transparent;
+          text-shadow: 0px 9px 10px rgba(0, 0, 0, 0.459);
+
+          @media screen and (prefers-color-scheme: light) {
+            text-shadow: 0px 5px 8px rgba(0, 0, 0, 0.459);
+          }
         }
       }
 
@@ -52,6 +100,11 @@
         letter-spacing: 1px;
         margin-block-end: 1.5rem;
         text-align: left;
+        text-shadow: 0px 9px 10px rgba(0, 0, 0, 0.459);
+
+        @media screen and (prefers-color-scheme) {
+          text-shadow: 0px 5px 8px rgba(0, 0, 0, 0.459);
+        }
       }
 
       &__btn {
@@ -136,6 +189,14 @@
     &--img {
       // background-color: green;
       flex: 1.5;
+
+      & img {
+        filter: drop-shadow(10px 20px 10px rgba(0, 0, 0, 0.712));
+
+        @media screen and (prefers-color-scheme: light) {
+          filter: drop-shadow(5px 10px 10px rgba(0, 0, 0, 0.712));
+        }
+      }
     }
   }
   @media screen and (max-width: 62rem) {
@@ -163,5 +224,14 @@
         align-self: center;
       }
     }
+  }
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
   }
 }

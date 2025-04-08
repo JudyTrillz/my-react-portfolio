@@ -1,5 +1,5 @@
 .scroll-up {
-  background-color: var(--c-accent);
+  background: linear-gradient(135deg, #00c6ff, #e58e8a, #004a5f, #002737);
   position: fixed;
   padding: 8px 10px;
   bottom: 3rem;
@@ -24,7 +24,6 @@
   }
 
   &:hover {
-    transform: translateY(-5px);
     box-shadow: none;
   }
 }

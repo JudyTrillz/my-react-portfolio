@@ -3,11 +3,14 @@ import { Element } from "react-scroll";
 import { RiSendPlaneFill } from "react-icons/ri";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { motion } from "framer-motion";
 
 import { IoLogoWhatsapp } from "react-icons/io5";
 import { PiMicrosoftOutlookLogoFill } from "react-icons/pi";
 import { BsLinkedin } from "react-icons/bs";
 import { IoCallSharp } from "react-icons/io5";
+
+const isMobile = window.innerWidth <= 992;
 
 const Contact = () => {
   const serviceId = import.meta.env.VITE_APP_SERVICE_ID;
@@ -116,12 +119,38 @@ const Contact = () => {
     }
   };
 
+  const listVariants = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: isMobile ? 0.2 : 0.5,
+        delayChildren: isMobile ? 0.2 : 0.5,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: -500 },
+    whileInView: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 1 },
+    },
+  };
+
   return (
     <Element name="Contact">
       <section className="section container contact">
         <h2 className="section-title">Talk to me</h2>
 
-        <div className="contact__content">
+        <motion.div
+          className="contact__content"
+          initial={{ y: 100, filter: "blur(10px)" }}
+          whileInView={{
+            y: 0,
+            filter: "blur(0px)",
+            transition: { duration: 1, ease: "easeIn" },
+          }}>
           <div className="contact__content--text">
             <h3 className="contact__content--text__superTitle">
               Let’s Build Something Incredible Together!
@@ -139,40 +168,70 @@ const Contact = () => {
               away.
             </p>
 
-            <div className="contact__content--text__socials">
-              <button
+            <motion.div
+              variants={listVariants}
+              className="contact__content--text__socials">
+              <motion.button
+                variants={itemVariants}
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{
+                  opacity: 1,
+                  x: 0,
+                  transition: { delay: 0.5, staggerChildren: 0.2 },
+                }}
                 type="button"
                 onClick={() => clickIcon("whatsapp")}
                 className="social-icon"
                 title="Connect with me on whatsapp">
                 <IoLogoWhatsapp />
-              </button>
+              </motion.button>
 
-              <button
+              <motion.button
+                variants={itemVariants}
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{
+                  opacity: 1,
+                  x: 0,
+                  transition: { delay: 0.5, staggerChildren: 0.2 },
+                }}
                 type="button"
                 onClick={() => clickIcon("outlook")}
                 className="social-icon"
                 title="Mail me on outlook">
                 <PiMicrosoftOutlookLogoFill />
-              </button>
+              </motion.button>
 
-              <button
+              <motion.button
+                variants={itemVariants}
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{
+                  opacity: 1,
+                  x: 0,
+                  transition: { delay: 0.5, staggerChildren: 0.2 },
+                }}
                 type="button"
                 onClick={() => clickIcon("linkedin")}
                 rel="noreferrer"
                 className="social-icon"
                 title="Connect with me on LinkedIn">
                 <BsLinkedin />
-              </button>
+              </motion.button>
 
-              <button
+              <motion.button
+                variants={itemVariants}
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{
+                  opacity: 1,
+                  x: 0,
+                  transition: { delay: 0.5, staggerChildren: 0.2 },
+                }}
                 type="button"
                 onClick={() => clickIcon("call")}
                 className="social-icon"
                 title="Call me">
                 <IoCallSharp />
-              </button>
-            </div>
+              </motion.button>
+            </motion.div>
           </div>
 
           <div className="contact__content--form">
@@ -255,7 +314,7 @@ const Contact = () => {
               {error && <p className="msg error">Oops! Message not sent ❌</p>}
             </form>
           </div>
-        </div>
+        </motion.div>
       </section>
     </Element>
   );

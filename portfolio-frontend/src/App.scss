@@ -28,7 +28,7 @@
   --ff-2: "Cormorant Upright", serif;
   --ff-3: "Cinzel Decorative", serif;
 
-  --section-padding: 100px;
+  --section-padding: 130px;
   --transition: 0.39s ease-in-out;
 
   @media only screen and (prefers-color-scheme: light) {
@@ -50,6 +50,7 @@
 
 .section {
   padding-top: var(--section-padding);
+  scroll-padding-top: 30px;
 }
 
 .section-title {
@@ -64,11 +65,24 @@
   margin-bottom: 40px;
   font-family: var(--ff-2);
 
+  background: linear-gradient(135deg, #00c6ff, #e58e8a, #007ca8, #004a5f, #002737);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow: 0px 9px 10px rgba(0, 0, 0, 0.459);
+
+  @media screen and (prefers-color-scheme: light) {
+    text-shadow: 0px 5px 8px rgba(0, 0, 0, 0.459);
+  }
+
   &::before {
     content: "";
     width: 250px;
     height: 3px;
-    background-color: var(--c-accent);
+    background: linear-gradient(135deg, #00c6ff, #e58e8a, #007ca8, #004a5f, #002737);
     position: absolute;
     bottom: -10px;
     left: 50%;
@@ -80,7 +94,7 @@
     position: absolute;
     width: 10px;
     height: 10px;
-    background-color: var(--c-accent);
+    background: linear-gradient(135deg, #00c6ff, #e58e8a, #007ca8, #004a5f, #002737);
     bottom: -14px;
     left: 50%;
     transform: translateX(-50%);

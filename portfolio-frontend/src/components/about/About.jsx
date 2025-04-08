@@ -1,6 +1,7 @@
 import "./About.scss";
 import { Element } from "react-scroll";
 import { LiaDownloadSolid } from "react-icons/lia";
+import { motion } from "framer-motion";
 
 import aboutBanner from "../../assets/img/banners/check 1 (1)-Photoroom.png";
 import cv from "../../assets/JUDY CHUKWU ODIAKOSE.pdf";
@@ -24,11 +25,28 @@ const About = () => {
         <h2 className="section-title">lil about me</h2>
 
         <div className="about__content">
-          <div className="about__content--img">
+          <div className="about__content--gradient"></div>
+          <motion.div
+            className="about__content--img"
+            initial={{ opacity: 0.3, y: 50, filter: "blur(10px)" }}
+            whileInView={{
+              y: 0,
+              opacity: 1,
+              filter: "blur(0px)",
+              transition: { duration: 1, ease: "easeIn" },
+            }}>
             <img src={aboutBanner} alt="about banner" loading="lazy" />
-          </div>
+          </motion.div>
 
-          <div className="about__content--text">
+          <motion.div
+            className="about__content--text"
+            initial={{ opacity: 0.3, y: 50, filter: "blur(10px)" }}
+            whileInView={{
+              y: 0,
+              opacity: 1,
+              filter: "blur(0px)",
+              transition: { duration: 1, ease: "easeIn" },
+            }}>
             <h2 className="about__content--text__title">
               Hi, I&apos;m <em>Judy Chukwu Odiakose</em>
             </h2>
@@ -52,9 +70,12 @@ const About = () => {
             <div className="about__content--text__ticker">
               <Skill />
             </div>
-          </div>
+          </motion.div>
         </div>
-        <div className="about__content--qualities">
+        <motion.div
+          className="about__content--qualities"
+          initial={{ y: 50 }}
+          whileInView={{ y: 0, transition: { duration: 1, ease: "easeInOut" } }}>
           <Quality
             icon={"🧩"}
             title={"Problem Solving"}
@@ -76,7 +97,7 @@ const About = () => {
               "I quickly adjust to new technologies, and workflows ensuring smooth collaboration and continuous growth."
             }
           />
-        </div>
+        </motion.div>
       </section>
     </Element>
   );
