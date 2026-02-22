@@ -97,7 +97,6 @@ const Contact = () => {
     if (invalidEmail) {
       return;
     } else {
-      console.log(serviceId, templateId, publicKey);
       emailjs
         .send(serviceId, templateId, templateParams, publicKey)
         .then(() => {
